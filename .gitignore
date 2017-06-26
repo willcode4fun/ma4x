@@ -18,7 +18,8 @@ target/
 
 ### GRADLE
 .gradle/
-/build/
+**/build/
+
 
 ### INTELLIJ
 *.iml

@@ -1,0 +1,21 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'org.akhikhl.gretty:gretty:+'
+  }
+}
+apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+dependencies {
+  compile project(':tools:faker')
+}
+
+
+// jetty settings
+gretty {
+  httpPort = 8081
+  contextPath = '/'
+  servletContainer = 'jetty9'
+}
