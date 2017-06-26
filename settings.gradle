@@ -1,0 +1,3 @@
+rootProject.name = 'ma4x'
+include 'tools:faker', 'tools:svg', 'tools:image', ':rest'
+

@@ -1,0 +1,28 @@
+#### JAVA
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+### MAVEN
+target/
+
+### GRADLE
+.gradle/
+
+### INTELLIJ
+*.iml
+.idea/
+classes/
+av-noa-abs-web/markersDirectory/
+av-noa-abs-web/node/
+av-noa-abs-web/node_modules/
