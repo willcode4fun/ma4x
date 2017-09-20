@@ -1,0 +1,35 @@
+version = '1.0'
+
+apply plugin: 'java'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Sample Terminal App',
+                'Implementation-Version': version,
+                'Main-Class': 'com.github.willcode4fun.tools.term.Term'
+    }
+    baseName = project.name
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+task runJar(type: JavaExec, dependsOn: fatJar) {
+    classpath = files('build/libs/term-1.0.jar')
+    classpath += sourceSets.main.runtimeClasspath
+    main = "com.github.willcode4fun.tools.term.Term"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'net.java.dev.jna', name: 'jna', version: '4.4.0'
+    compile group: 'net.java.dev.jna', name: 'jna-platform', version: '4.4.0'
+    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}

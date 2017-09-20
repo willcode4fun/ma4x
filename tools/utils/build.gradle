@@ -1,0 +1,16 @@
+version 'unspecified'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.16.18'
+    compile 'ch.qos.logback:logback-classic:1.1.3'
+    testCompile'junit:junit:4.11'
+    testCompileOnly 'org.projectlombok:lombok:1.16.18'
+}

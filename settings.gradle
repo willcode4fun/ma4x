@@ -1,3 +1,5 @@
 rootProject.name = 'ma4x'
-include 'tools:faker', 'tools:svg', 'tools:image', ':rest'
+include 'tools:utils', 'tools:faker', 'tools:svg', 'tools:image', ':rest'
+include 'tools:term'
+findProject(':tools:term')?.name = 'term'
 
