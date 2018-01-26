@@ -40,7 +40,11 @@ public class MathUtils {
             double z = r * Math.cos(theta);
             return new CartesianCoordinates(x, y, z);
         }
+    }
 
-
+    public static double angularDist(CartesianCoordinates a, CartesianCoordinates b){
+        double scalar = a.x * b.x + a.y * b.y + a.z * b.z;
+        double squareRadius = a.x * a.x + a.y * a.y + a.z * a.z;
+        return Math.acos(scalar/squareRadius);
     }
 }
